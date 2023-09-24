@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<div class="section">
+    <div class="container">
+        <h1 class="title is-3">新しい投稿</h1>
+        <form method="POST" class="form">
+            {% csrf_token %}
+            <div class="field">
+                {{ form.as_p }}
+            </div>
+            <div class="field is-grouped">
+                <div class="control">
+                    <button type="submit" class="button is-link is-outlined">投稿</button>
+                </div>
+                <div class="control">
+                    <a href="/" class="button is-outlined is-danger">トップに戻る</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
